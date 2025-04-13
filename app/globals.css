@@ -2,11 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer base {
   :root {
-
     --background: 0 0% 100%;
 
     --foreground: 0 0% 3.9%;
@@ -55,10 +52,9 @@
 
     --chart-5: 27 87% 67%;
 
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
   .dark {
-
     --background: 0 0% 3.9%;
 
     --foreground: 0 0% 98%;
@@ -105,11 +101,9 @@
 
     --chart-4: 280 65% 60%;
 
-    --chart-5: 340 75% 55%
+    --chart-5: 340 75% 55%;
   }
 }
-
-
 
 @layer base {
   * {
@@ -118,4 +112,30 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Tooltip içeriğinin görünür olması için gerekli stil */
+.tooltip-content {
+  visibility: hidden; /* Tooltip başlangıçta gizli */
+  opacity: 0; /* Opaklık sıfır */
+  position: absolute; /* Tooltip'in yerleşimi için */
+  transition: opacity 0.2s ease, visibility 0.2s ease; /* Animasyon efekti */
+  background-color: rgba(0, 0, 0, 0.75); /* Arka plan rengi */
+  color: white; /* Yazı rengi */
+  padding: 5px 10px; /* Padding */
+  border-radius: 4px; /* Yuvarlatılmış köşeler */
+  font-size: 12px; /* Yazı boyutu */
+  z-index: 1000; /* Tooltip'in üstte görünmesi için */
+}
+
+/* Tooltip tetiklendiğinde görünür hale gelmesi için */
+.tooltip-content.visible {
+  visibility: visible; /* Görünür */
+  opacity: 1; /* Opaklık 1 olacak */
+}
+
+/* Tooltip'in üstünde gezildiğinde trigger kısmının stili */
+.tooltip-trigger:hover + .tooltip-content {
+  visibility: visible;
+  opacity: 1;
 }
