@@ -42,9 +42,12 @@ export function signIn(email: string, password: string) {
       const errorMessage = error.message;
     });
 }
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+
 export function onAuthStateChanged(cb: (user: any) => void) {
   return _onAuthStateChanged(auth, cb);
 }
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 
 export function onIdTokenChanged(cb: (user: any) => void) {
   return _onIdTokenChanged(auth, cb);

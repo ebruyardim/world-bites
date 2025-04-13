@@ -4,6 +4,7 @@ import { onIdTokenChanged } from "./auth";
 
 export const listenToAuthChanges = (
   dispatch: AppDispatch,
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   callback: (user: any) => void
 ) => {
   return onIdTokenChanged((user) => {

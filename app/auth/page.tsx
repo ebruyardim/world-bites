@@ -151,7 +151,7 @@ export default function AuthPage() {
                 </CardContent>
                 <CardFooter className="flex flex-col space-y-2 pb-6 pt-2 px-6">
                   <div className="text-center text-xs">
-                    Don't have an account yet?{" "}
+                    Don&apos;t have an account yet?{" "}
                     <button
                       onClick={toggleAuthMode}
                       className="text-pink-500 hover:text-pink-700 font-medium"
