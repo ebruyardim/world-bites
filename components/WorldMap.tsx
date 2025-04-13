@@ -29,9 +29,8 @@ export default function WorldMap() {
     if (position.zoom <= 1) return;
     setPosition((pos) => ({ ...pos, zoom: pos.zoom / 1.5 }));
   }
-
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   function handleMoveEnd(position: any) {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     setPosition(position);
   }
 
